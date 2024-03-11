@@ -3,10 +3,25 @@
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
 
+const newWord = function (str1, str2) {
+  const resultOfNewWord = str1
+    .substring(0, 2)
+    .concat(str2.slice(-3))
+    .toUpperCase()
+  console.log(resultOfNewWord)
+}
+newWord("jacopo", "alice")
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
-
+const randomNumbers = []
+const numbers = function () {
+  for (let i = 0; i < 10; i++) {
+    randomNumbers.push(Math.floor(Math.random() * 101))
+  }
+  return randomNumbers
+}
+console.log(numbers())
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
@@ -39,11 +54,23 @@ console.log(numbersMap)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+const arrayOfString = ["ciao", "Jacopo", "termonucleare"]
+
+const newArrayOfString = arrayOfString.map((str) => str.length)
+console.log(newArrayOfString)
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
-
+const numeriDispari = []
+const dispari = (num) => {
+  let count = 0
+  for (let i = 0; i < 100; i++) {
+    numeriDispari.push(num % 2 === 1)
+  }
+  return numeriDispari
+}
+console.log(dispari())
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
   {
@@ -192,7 +219,8 @@ console.log(sumYearsMovies)
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
-
+const found = movies.find((obj) => obj.imdbID)
+console.log(found)
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
